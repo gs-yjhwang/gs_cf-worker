@@ -28,7 +28,7 @@
 ## 🚀 프로젝트 구조 (Project Structure)
 
 ```text
-gs_cf-worker/
+infra_worker/
 ├── package.json         # npm 설정 및 Wrangler CLI 스크립트
 ├── wrangler.toml        # Cloudflare Worker 및 KV Namespace 구성 파일
 ├── src/
