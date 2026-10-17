@@ -8,10 +8,10 @@ import { LOGO_BASE64 } from './logo.js';
 let memoryStore = {
   enabled: true,
   status: "ongoing", // "ongoing" | "scheduled" | "completed"
-  title: "게임세상 서비스 정기 점검 안내",
+  title: "겜스 서비스 정기 점검 안내",
   startTime: "2026-08-25T02:00:00+09:00",
   endTime: "2026-08-26T08:00:00+09:00",
-  noticeText: "게임세상 서비스를 보다 안정적이고 원활하게 제공해 드리기 위해 시스템 서버 점검 및 데이터베이스 최적화를 진행하고 있습니다.\n점검 시간 동안에는 게임세상 주요 서비스 이용이 일시 중지되오니 고객 여러분의 양해 부탁드립니다.",
+  noticeText: "겜스(구 게임세상) 서비스를 보다 안정적이고 원활하게 제공해 드리기 위해 시스템 서버 점검 및 데이터베이스 최적화를 진행하고 있습니다.\n점검 시간 동안에는 겜스 주요 서비스 이용이 일시 중지되오니 고객 여러분의 양해 부탁드립니다.",
   impactedServices: [
     "www.gamess.co.kr (메인 포털)",
     "play.gamess.co.kr (게임 서비스 & 결제)",
@@ -382,7 +382,7 @@ export default {
         const updatedConfig = {
           enabled: Boolean(body.enabled),
           status: ['ongoing', 'scheduled', 'completed'].includes(body.status) ? body.status : 'ongoing',
-          title: String(body.title || '게임세상 서비스 점검 안내'),
+          title: String(body.title || '겜스 서비스 점검 안내'),
           startTime: String(body.startTime || ''),
           endTime: String(body.endTime || ''),
           noticeText: String(body.noticeText || ''),
@@ -441,7 +441,7 @@ export default {
               const updatedConfig = {
                 enabled: true,
                 status: ['ongoing', 'scheduled', 'completed'].includes(formData.get('status')) ? formData.get('status') : 'ongoing',
-                title: String(formData.get('title') || '게임세상 서비스 정기 점검 안내'),
+                title: String(formData.get('title') || '겜스 서비스 정기 점검 안내'),
                 startTime: String(formData.get('startTime') || ''),
                 endTime: String(formData.get('endTime') || ''),
                 noticeText: String(formData.get('noticeText') || ''),
@@ -503,8 +503,8 @@ function renderPublicNoticeHtml(config) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(config.title)} | 게임세상</title>
-  <meta name="description" content="게임세상 서비스 점검 및 시스템 점검 안내 페이지입니다.">
+  <title>${escapeHtml(config.title)} | 겜스</title>
+  <meta name="description" content="겜스(구 게임세상) 서비스 점검 및 시스템 점검 안내 페이지입니다.">
   <link rel="icon" href="/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -892,7 +892,7 @@ function renderPublicNoticeHtml(config) {
         <img 
           src="/logo.png" 
           onerror="this.onerror=null; this.src='${logoDataUri}';" 
-          alt="게임세상" 
+          alt="GameSS 겜스"
           class="logo-img"
         />
       </a>
@@ -982,7 +982,7 @@ function renderPublicNoticeHtml(config) {
   </div>
 
   <footer>
-    <p>© GAMESS All rights reserved. | 문의: ${escapeHtml(config.contactInfo)}</p>
+    <p>© 겜스 (구 게임세상). All rights reserved. | 문의: ${escapeHtml(config.contactInfo)}</p>
     <p style="margin-top:8px;"><a href="/admin">🔐 관리자 설정</a></p>
   </footer>
 
@@ -1094,7 +1094,7 @@ function renderAdminHtml(config, isAuthenticated, adminSecret = 'gamess2026!', t
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>점검 안내 관리자 설정 | 게임세상</title>
+  <title>점검 안내 관리자 설정 | 겜스</title>
   <link rel="icon" href="/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -1257,7 +1257,7 @@ function renderAdminHtml(config, isAuthenticated, adminSecret = 'gamess2026!', t
 <body>
   <div class="admin-container">
     <div class="admin-header">
-      <img src="/logo.png" onerror="this.onerror=null; this.src='${logoDataUri}';" alt="게임세상" class="logo-img">
+      <img src="/logo.png" onerror="this.onerror=null; this.src='${logoDataUri}';" alt="GameSS 겜스" class="logo-img">
       <a href="/" class="back-link">← 점검 페이지로 돌아가기</a>
     </div>
 

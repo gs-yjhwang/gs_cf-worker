@@ -81,6 +81,11 @@ npx wrangler secret put ADMIN_KEY
 npm run deploy
 ```
 
+운영 배포 시 `deploy.sh`가 기본적으로 `/home/gamess/infra_cloudflare/.env`의
+`cloudflare-ID`와 `cloudflare-API-token`을 읽어 Wrangler 표준 환경변수로
+매핑합니다. 다른 파일을 사용할 때는 `CLOUDFLARE_ENV_FILE`로 경로를 지정합니다.
+R2용 Access Key와 Secret Access Key는 Worker 배포에 사용하지 않습니다.
+
 ---
 
 ## 🔐 보안 및 팁 (Security)
